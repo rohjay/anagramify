@@ -32,6 +32,30 @@ class Anagram_Tests extends PHPUnit_Framework_TestCase
         }
     }
 
+    public function dataProviderTestRemove_Whitespace()
+    {
+        return array(
+            array('test', 'test'),
+            array('test ', 'test'),
+            array('t e s t   ', 'test'),
+            array(' test', 'test'),
+            array(' test ', 'test'),
+            array('		test		', 'test'),
+            array('test
+                ', 'test'), // intentional goofy whitespace... ew.
+            array('the quick brown fox jumped over the lazy dog', 'thequickbrownfoxjumpedoverthelazydog')
+        );
+    }
+
+    /**
+     * @dataProvider dataProviderTestRemove_Whitespace
+     */
+    public function testremove_whitespace($input, $expected)
+    {
+        $actual = remove_whitespace($input);
+        $this->assertEquals($expected, $actual);
+    }
+
     public function testget_potential_words()
     {
         $input = 'team';

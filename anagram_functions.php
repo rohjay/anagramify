@@ -9,12 +9,17 @@ function logger($description, $start_time, &$last_mem)
     echo "Description: $description\nDuration: {$time_since}s\t//\tCurrent Memory: $current_mem  \t//\tMem diff: $mem_diff\n\n";
 }
 
+function remove_whitespace($input)
+{
+    return str_replace(array(" ", "\t", "\n"), '', $input);
+}
+
 function count_letters($input)
 {
     if ( !is_string($input) ) {
         throw new Exception("Input is not a string! GO DRUNK RYAN! YOU'RE HOME!");
     }
-    $input = str_replace(array(" ", "\t", "\n"), '', $input);
+    $input = remove_whitespace($input);
     $letters = str_split($input);
     $return = array();
     foreach ($letters as $letter) {
@@ -42,7 +47,7 @@ function get_potential_words(&$dictionary, &$input)
 function check_if_good_word($word, $input)
 {
     // If it's the same word, or the word to check against is longer than the input word, no bueno
-    $no_space_word = str_replace(' ', '', $word);
+    $no_space_word = remove_whitespace($word);
     if ( $input == $word || strlen($no_space_word) > strlen($input) ) {
         return false;
     }
@@ -63,7 +68,7 @@ function build_anagrams_from_potentials($potential_words, $input_word)
         return;
     }
     $combinations = array();
-    $input_length = strlen($input_word);
+    $input_length = strlen(remove_whitespace($input_word));
 
     // This is easy: They're the same length, and can't have any more of any
     // character than what's in them. Hence, if they're the same length, it's
