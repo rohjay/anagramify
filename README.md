@@ -14,3 +14,5 @@ This simple script allows you to pass in certain arguments (like input, gt, dict
 # Disclaimer
 Some of the words in these dictionaries may be offensive. If your name is like Stephanie's, you'll soon learn that you can't spell it without p!@#$. That's right, folks: p!@#$. P!@#$ heat. P!@#$ hate. Whatever. If you're easily offended, please do not use this tool. It is stricly for humorous purposes.
 
+# Disclaimer.2
+I never said it would be fast.
