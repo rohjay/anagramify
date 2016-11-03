@@ -134,3 +134,12 @@ function get_word_count_diff(&$potential_word_count, &$input_word_count)
 
     return $what_input_needs_still;
 }
+
+function sort_word($word)
+{
+    $word = str_split($word);
+    sort($word);
+    return join($word, '');
+}
+
+

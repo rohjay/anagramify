@@ -173,4 +173,15 @@ class Anagram_Tests extends PHPUnit_Framework_TestCase
         
         $this->assertEquals($expected, $actual);
     }
+
+    public function testSortWord()
+    {
+        $input = 'cba';
+        $expected = 'abc';
+
+        $actual = sort_word($input);
+
+        $this->assertEquals($expected, $actual);
+    }
 }
+
