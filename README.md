@@ -1,7 +1,7 @@
 # Anagramify
 Php script to make anagrams.
 
-Right now, these files are ready to go on your webserver that can run php. I currently have this publicly hosted at [http://nacholibre.wpengine.com/anagrams.php](http://nacholibre.wpengine.com/anagrams.php).
+Right now, these files are ready to go on your webserver that can run php. I currently have this publicly hosted at [http://nacholibre.wpengine.com/anagrams.php](http://nacholibre.wpengine.com/anagrams.php) (not anymore I don't!).
 
 This simple script allows you to pass in certain arguments (like input, gt, dict, verbose, and debug) to build anagrams from different input.
 
